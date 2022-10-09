@@ -1,11 +1,15 @@
-#include <iostream>
 #include "main.hpp"
-using namespace std;
 
-void printtriangle(int numbers[][3], int);
 int main()
 {
-	int numbers[SIZE][SIZE] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+	const int N = 8;
+	// int number[N];
+	int number[N] = {17, 11, 3, 6, 1, 18, 5, 14};
+	int min;
 
-	printtriangle(numbers, SIZE);
+	// makeArray(number, N);
+	printArray(number, N);
+	min = findMin(number, N);
+	printArray(number, N);
+	cout << "Min value is : " << min << endl;
 }

@@ -5,16 +5,20 @@
 
 ---
 
-### Quiz 7: Question 2
+### Quiz 7: Question 3
 
 ### Edit the "main.hpp"
 
 > Complete functions
+>
+> > > int findMin(int number[], int N) <br>
+> > > void compareTwo(int number[], int N, int step) <br>
 
 > > To run "main.hpp" locally, you can use the "main.cpp". <br>
 > > g++ --std=c++17 main.cpp <br>
 > > ./a.out
-<!-- 
+
+<!--
 ### 👓 Watch:
 
 - [Vector Insertion and Deletion [Lab7-11]](https://youtu.be/bu4Ab1UN_m0) -->

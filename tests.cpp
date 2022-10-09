@@ -5,34 +5,45 @@
 #include "catch.hpp"
 #include "main.hpp"
 // tests for exercise 1
-TEST_CASE("Ex1 3x3() ", "[example]")
+TEST_CASE("Ex1 findMin() ", "[example]")
 {
-	fstream file;
-	int num;
-	int numbers[SIZE][SIZE] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+	const int N = 8;
+	// int number[N];
+	int number[N] = {17, 11, 3, 6, 1, 18, 5, 14};
+	int min;
 
-	printtriangle(numbers, SIZE);
-
-	file.open("output.txt", ios::in | ios::out);
-	if (!file)
-	{
-		cout << "file open error 2\n";
-		exit(0);
-	}
-	REQUIRE(file);
-	file >> num;
-	REQUIRE(num == 0);
-	file >> num;
-	REQUIRE(num == 3);
-	file >> num;
-	REQUIRE(num == 4);
-	file >> num;
-	REQUIRE(num == 6);
-	file >> num;
-	REQUIRE(num == 7);
-	file >> num;
-	REQUIRE(num == 8);
-	file.close();
+	// makeArray(number, N);
+	printArray(number, N);
+	min = findMin(number, N);
+	printArray(number, N);
+	REQUIRE(min == 1);
+	cout << "--------------------------------------------------\n";
 
 	// REQUIRE(number[idx] == usernum);
+}
+TEST_CASE("Ex2 compareTwo() ", "[example]")
+{
+	const int N = 8;
+	// int number[N];
+	int number[N] = {17, 11, 3, 6, 1, 18, 5, 14};
+	int min, step;
+
+	// makeArray(number, N);
+	printArray(number, N);
+	step = 1;
+	compareTwo(number, N, step);
+	printArray(number, N);
+
+	REQUIRE(number[0] == 11);
+	REQUIRE(number[2] == 3);
+	REQUIRE(number[4] == 1);
+	REQUIRE(number[6] == 5);
+	// REQUIRE(number[idx] == usernum);
+
+	step = 2;
+	compareTwo(number, N, step);
+	printArray(number, N);
+	cout << "--------------------------------------------------\n";
+	REQUIRE(number[0] == 3);
+	REQUIRE(number[4] == 1);
 }
